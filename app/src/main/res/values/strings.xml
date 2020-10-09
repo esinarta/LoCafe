@@ -23,4 +23,23 @@
     <string name="queue_number_ph">14</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="favourites">
+        <item>Starbucks</item>
+        <item>Blenz</item>
+        <item>Waves</item>
+        <item>McDonald\'s</item>
+        <item>Tim Horton\'s</item>
+        <item>49th Parallel</item>
+        <item>Favourite</item>
+        <item>Favourite</item>
+        <item>Favourite</item>
+        <item>Favourite</item>
+    </string-array>
+    <string-array name="account">
+        <item>Personal Information</item>
+        <item>Bookings</item>
+        <item>Account Settings</item>
+        <item>Payment Options</item>
+        <item>Logout</item>
+    </string-array>
 </resources>
