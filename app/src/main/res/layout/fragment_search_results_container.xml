@@ -29,8 +29,8 @@
     <fragment
         android:id="@+id/fragment"
         android:name="ca.bcit.locafe.SearchResultsFragment"
-        android:layout_width="314dp"
-        android:layout_height="591dp"
+        android:layout_width="407dp"
+        android:layout_height="601dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
