@@ -10,7 +10,7 @@ public class QueueViewModel extends ViewModel {
 
     public QueueViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is queue fragment");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {

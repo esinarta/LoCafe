@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,9 +13,18 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import ca.bcit.locafe.ListArrayAdapter;
 import ca.bcit.locafe.R;
 
 public class FavouritesFragment extends Fragment {
+
+    ListView listView;
+    ArrayList<FavouriteItem> arrayList = new ArrayList<>();
+    ListArrayAdapter adapter;
 
     private FavouritesViewModel favouritesViewModel;
 
@@ -32,4 +42,21 @@ public class FavouritesFragment extends Fragment {
         });
         return root;
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        listView = Objects.requireNonNull(getView()).findViewById(R.id.list_favourites);
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        adapter = new ListArrayAdapter(getActivity(), arrayList);
+        listView.setAdapter(adapter);
+    }
+
+
 }
