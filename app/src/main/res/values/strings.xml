@@ -22,8 +22,9 @@
     <string name="queue_text_queued">You are currently number</string>
     <string name="queue_number_ph">14</string>
     <string name="account_image_content">Account Icon</string>
+    <string name="search_result_header">Search Results</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="location_details_title_temp">Location Name</string>
     <string-array name="favourites">
         <item>Starbucks</item>
         <item>Blenz</item>
