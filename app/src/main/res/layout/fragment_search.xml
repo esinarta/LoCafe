@@ -6,13 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".ui.search.SearchFragment">
 
+    <ImageView
+        android:id="@+id/queue_image"
+        android:layout_width="195dp"
+        android:layout_height="111dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Logo"
+        android:src="@drawable/locafe_logo_text"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/text_search"
-        android:layout_width="302dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="70dp"
+        android:layout_width="290dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="25dp"
         android:autoText="false"
         android:hint="@string/start_typing"
         android:inputType="text"
@@ -20,42 +34,28 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="82dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="71dp"
-        android:text="@android:string/search_go"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_search" />
-
-    <TextView
         android:id="@+id/textView"
-        android:layout_width="369dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="169dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="296dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="59dp"
         android:text="@string/search_header"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/text_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/queue_image" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView2"
-        android:layout_width="413dp"
-        android:layout_height="146dp"
-        android:layout_marginBottom="185dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="162dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
