@@ -14,6 +14,33 @@
     <string name="title_queue">Queue</string>
     <string name="title_favourites">Favourites</string>
     <string name="title_account">Account</string>
+    <string name="search_header">Search for a workspace</string>
+    <string name="start_typing">Start typing here …</string>
+    <string name="queue_text_unqueued">Your place in line will show up here</string>
+    <string name="queue_queuenow">Queue Now</string>
+    <string name="queue_unqueue">Leave Queue</string>
+    <string name="queue_text_queued">You are currently number</string>
+    <string name="queue_number_ph">14</string>
+    <string name="account_image_content">Account Icon</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="favourites">
+        <item>Starbucks</item>
+        <item>Blenz</item>
+        <item>Waves</item>
+        <item>McDonald\'s</item>
+        <item>Tim Horton\'s</item>
+        <item>49th Parallel</item>
+        <item>Favourite</item>
+        <item>Favourite</item>
+        <item>Favourite</item>
+        <item>Favourite</item>
+    </string-array>
+    <string-array name="account">
+        <item>Personal Information</item>
+        <item>Bookings</item>
+        <item>Account Settings</item>
+        <item>Payment Options</item>
+        <item>Logout</item>
+    </string-array>
 </resources>
