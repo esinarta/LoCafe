@@ -7,28 +7,33 @@
     android:orientation="vertical"
     tools:context=".ui.account.AccountFragment">
 
-    <TextView
-        android:id="@+id/text_account"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:textAlignment="viewStart"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_baseline_account_circle_24"
-        android:layout_gravity="end"
-        android:contentDescription="Account Icon"/>
+        <TextView
+            android:id="@+id/text_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:textAlignment="viewStart"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/ic_baseline_account_circle_24"
+            android:layout_gravity="end"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Account Icon"/>
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/list_account"
