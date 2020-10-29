@@ -1,9 +1,12 @@
 package ca.bcit.locafe.ui.search;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +16,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import ca.bcit.locafe.R;
+import ca.bcit.locafe.SearchResultsContainerFragment;
 
 public class SearchFragment extends Fragment {
 
@@ -32,4 +36,21 @@ public class SearchFragment extends Fragment {
         });
         return root;
     }
+
+//    @Override
+//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+//        Button searchBtn = (Button) getView().findViewById(R.id.btnSearch);
+//
+//        searchBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getActivity(), SearchResultsContainerFragment.class);
+//                TextView textView = getView().findViewById(R.id.text_search);
+//                String searchText = textView.getText().toString();
+//                intent.putExtra("SEARCH_TEXT", searchText);
+//                startActivity(intent);
+//            }
+//        });
+//    }
+
 }
