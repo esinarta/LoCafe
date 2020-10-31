@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import ca.bcit.locafe.LocationDetailsActivity;
 import ca.bcit.locafe.R;
 import ca.bcit.locafe.SearchResultsContainerFragment;
 
@@ -37,20 +38,20 @@ public class SearchFragment extends Fragment {
         return root;
     }
 
-//    @Override
-//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-//        Button searchBtn = (Button) getView().findViewById(R.id.btnSearch);
-//
-//        searchBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), SearchResultsContainerFragment.class);
-//                TextView textView = getView().findViewById(R.id.text_search);
-//                String searchText = textView.getText().toString();
-//                intent.putExtra("SEARCH_TEXT", searchText);
-//                startActivity(intent);
-//            }
-//        });
-//    }
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Button searchBtn = (Button) getView().findViewById(R.id.btnSearch);
+
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), LocationDetailsActivity.class);
+                TextView textView = getView().findViewById(R.id.text_search);
+                String searchText = textView.getText().toString();
+                intent.putExtra("SEARCH_TEXT", searchText);
+                startActivity(intent);
+            }
+        });
+    }
 
 }
