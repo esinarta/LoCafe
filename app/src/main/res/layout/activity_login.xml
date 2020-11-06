@@ -39,7 +39,7 @@
             android:background="@color/colorAccent"/>
 
         <Button
-            android:text="Register!"
+            android:text="Register"
             android:id="@+id/registerButton"
             android:layout_width="140dp"
             android:layout_height="45dp"

@@ -22,6 +22,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import ca.bcit.locafe.MainActivity;
 import ca.bcit.locafe.R;
+import ca.bcit.locafe.RegisterActivity;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -60,6 +61,13 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }
                         });
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
             }
         });
     }
