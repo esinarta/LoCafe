@@ -3,6 +3,7 @@ package ca.bcit.locafe.data.model;
 public class User {
     protected String userId;
     protected String displayName;
+    protected String[] favourites;
 
     public User(String userId, String displayName) {
         this.userId = userId;
