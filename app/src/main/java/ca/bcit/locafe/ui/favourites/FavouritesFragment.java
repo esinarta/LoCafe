@@ -1,9 +1,11 @@
 package ca.bcit.locafe.ui.favourites;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,6 +20,7 @@ import java.util.List;
 import java.util.Objects;
 
 import ca.bcit.locafe.ListArrayAdapter;
+import ca.bcit.locafe.LocationDetailsActivity;
 import ca.bcit.locafe.R;
 
 public class FavouritesFragment extends Fragment {
@@ -54,9 +57,25 @@ public class FavouritesFragment extends Fragment {
         arrayList.add(new FavouriteItem("Favourites 1"));
         arrayList.add(new FavouriteItem("Favourites 1"));
         arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
+        arrayList.add(new FavouriteItem("Favourites 1"));
         adapter = new ListArrayAdapter(getActivity(), arrayList);
         listView.setAdapter(adapter);
     }
+
+//    @Override
+//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+//        Button searchBtn = (Button) getView().findViewById(R.id.btnDeleteFav);
+//
+//        searchBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+//    }
 
 
 }

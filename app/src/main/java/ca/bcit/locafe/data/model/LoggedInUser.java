@@ -5,15 +5,11 @@ package ca.bcit.locafe.data.model;
  */
 public class LoggedInUser extends User{
 
-    public LoggedInUser(String userId, String displayName) {
-        super(userId, displayName);
-    }
-
-    public String getUserId() {
-        return userId;
+    public LoggedInUser(String firstName, String lastName, String email) {
+        super(firstName, lastName, email);
     }
 
     public String getDisplayName() {
-        return displayName;
+        return firstName + lastName;
     }
 }

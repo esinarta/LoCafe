@@ -1,28 +1,27 @@
 package ca.bcit.locafe.data.model;
 
 public class User {
-    protected String userId;
-    protected String displayName;
+    protected String firstName;
+    protected String lastName;
+    protected String email;
     protected String[] favourites;
 
-    public User(String userId, String displayName) {
-        this.userId = userId;
-        this.displayName = displayName;
+    public User(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
 }
