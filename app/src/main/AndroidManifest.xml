@@ -11,6 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".RegisterActivity">
         </activity>
+        <activity android:name=".SearchResultsActivity">
+        </activity>
         <activity android:name=".LocationDetailsActivity" />
         <activity
             android:name=".BottomNavigation"

@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import ca.bcit.locafe.LocationDetailsActivity;
 import ca.bcit.locafe.R;
+import ca.bcit.locafe.SearchResultsActivity;
 import ca.bcit.locafe.SearchResultsContainerFragment;
 
 public class SearchFragment extends Fragment {
@@ -45,7 +46,7 @@ public class SearchFragment extends Fragment {
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), LocationDetailsActivity.class);
+                Intent intent = new Intent(getActivity(), SearchResultsActivity.class);
                 TextView textView = getView().findViewById(R.id.text_search);
                 String searchText = textView.getText().toString();
                 intent.putExtra("SEARCH_TEXT", searchText);
