@@ -7,6 +7,10 @@ public class Business {
     private long cord_lat, cord_long;
     private String description;
 
+    public Business() {
+
+    }
+
     public Business(String businessId, String name, String address, long cord_lat, long cord_long, String description) {
         this.businessId = businessId;
         this.name = name;
