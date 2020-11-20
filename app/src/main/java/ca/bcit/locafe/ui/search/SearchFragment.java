@@ -23,13 +23,12 @@ import ca.bcit.locafe.FavouritesListArrayAdapter;
 import ca.bcit.locafe.LocationDetailsActivity;
 import ca.bcit.locafe.R;
 import ca.bcit.locafe.SearchResultListArrayAdapter;
+import ca.bcit.locafe.SearchResultsActivity;
 import ca.bcit.locafe.SearchResultsContainerFragment;
-import ca.bcit.locafe.ui.favourites.FavouriteItem;
 
 public class SearchFragment extends Fragment {
 
     private SearchViewModel searchViewModel;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -53,7 +52,7 @@ public class SearchFragment extends Fragment {
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), LocationDetailsActivity.class);
+                Intent intent = new Intent(getActivity(), SearchResultsActivity.class);
                 TextView textView = getView().findViewById(R.id.text_search);
                 String searchText = textView.getText().toString();
                 intent.putExtra("SEARCH_TEXT", searchText);

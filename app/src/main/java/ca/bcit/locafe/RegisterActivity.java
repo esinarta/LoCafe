@@ -16,23 +16,27 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import ca.bcit.locafe.data.model.User;
 import ca.bcit.locafe.ui.login.LoginActivity;
 
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText email, password;
+    EditText firstName, lastName, email, password;
     Button registerButton,loginButton;
     FirebaseAuth firebaseAuth;
-    DatabaseReference databaseUsers;
-
+    private DatabaseReference dbRef;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        firstName = (EditText) findViewById(R.id.register_firstName);
+        lastName = (EditText) findViewById(R.id.register_lastName);
         email = (EditText) findViewById(R.id.register_email);
         password = (EditText) findViewById(R.id.register_password);
         registerButton = (Button) findViewById(R.id.registerButton);
@@ -52,6 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 if(TextUtils.isEmpty(passwordString)){
                     Toast.makeText(getApplicationContext(),"Please fill in the required fields",Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 if(password.length()<6){
@@ -63,8 +68,11 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-                                    //databaseUsers = FirebaseDatabase.getInstance().getReference("users");
-
+                                    dbRef = FirebaseDatabase.getInstance().getReference();
+                                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                    String userId = user.getUid();
+                                    User newUser = new User(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString());
+                                    dbRef.child("users").child(userId).setValue(newUser);
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     finish();
                                 }

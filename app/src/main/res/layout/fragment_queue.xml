@@ -77,19 +77,31 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:contentDescription="Account Icon"
+                android:contentDescription="@string/queue_not_found"
                 android:src="@drawable/ic_baseline_schedule_24" />
 
-            <Button
-                android:id="@+id/queue_now"
-                android:text="@string/queue_queuenow"
+            <TextView
+                android:id="@+id/text_queue_not_found"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:backgroundTint="@color/colorPrimary"
-                android:textColor="@color/colorAccentLight"/>
+                android:layout_marginTop="50dp"
+                android:text="@string/queue_not_found"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+<!--            <Button-->
+<!--                android:id="@+id/queue_now"-->
+<!--                android:text="@string/queue_queuenow"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                style="@style/Widget.AppCompat.Button.Colored"-->
+<!--                android:backgroundTint="@color/colorPrimary"-->
+<!--                android:textColor="@color/colorAccentLight"/>-->
 
         </LinearLayout>
 

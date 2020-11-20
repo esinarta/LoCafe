@@ -8,16 +8,19 @@
 
     <TextView
         android:id="@+id/favourite_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"/>
+
+    <Button
+        android:id="@+id/btnDeleteFav"
+        android:text="@string/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_gravity="center"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccentLight"/>
 
-    <ImageView
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginRight="10dp"
-        android:layout_gravity="right"
-        android:src="@drawable/ic_baseline_favorite_border_24"/>
 </LinearLayout>

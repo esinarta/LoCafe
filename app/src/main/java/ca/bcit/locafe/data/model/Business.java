@@ -2,14 +2,14 @@ package ca.bcit.locafe.data.model;
 
 public class Business {
     private String businessId;
-    private String businessName;
+    private String name;
     private String address;
     private long cord_lat, cord_long;
     private String description;
 
-    public Business(String businessId, String businessName, String address, long cord_lat, long cord_long, String description) {
+    public Business(String businessId, String name, String address, long cord_lat, long cord_long, String description) {
         this.businessId = businessId;
-        this.businessName = businessName;
+        this.name = name;
         this.address = address;
         this.cord_lat = cord_lat;
         this.cord_long = cord_long;
@@ -24,12 +24,12 @@ public class Business {
         this.businessId = businessId;
     }
 
-    public String getBusinessName() {
-        return businessName;
+    public String getName() {
+        return name;
     }
 
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
