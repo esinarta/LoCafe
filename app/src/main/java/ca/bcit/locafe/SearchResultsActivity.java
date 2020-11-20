@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,7 +26,7 @@ import java.util.ArrayList;
 import ca.bcit.locafe.data.model.Business;
 
 public class SearchResultsActivity extends AppCompatActivity {
-    private ListView lvResultsList;
+    private RecyclerView lvResultsList;
     private SearchResultsAdapter adapter;
     private ArrayList<Business> businessList;
 
@@ -36,6 +38,7 @@ public class SearchResultsActivity extends AppCompatActivity {
         lvResultsList = findViewById(R.id.results_list);
         businessList = new ArrayList<>();
         adapter = new SearchResultsAdapter(this, businessList);
+        lvResultsList.setLayoutManager(new LinearLayoutManager(this));
         lvResultsList.setAdapter(adapter);
 
         String searchText = getIntent().getStringExtra("SEARCH_TEXT");
@@ -44,13 +47,13 @@ public class SearchResultsActivity extends AppCompatActivity {
         Query query = dbBusiness.orderByChild("name").startAt(searchText);
         query.addListenerForSingleValueEvent(valueEventListener);
 
-        lvResultsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getBaseContext(), LocationDetailsActivity.class);
-                startActivity(intent);
-            }
-        });
+//        lvResultsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Intent intent = new Intent(getBaseContext(), LocationDetailsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     ValueEventListener valueEventListener = new ValueEventListener() {
@@ -61,10 +64,9 @@ public class SearchResultsActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Business business = snapshot.getValue(Business.class);
                     businessList.add(business);
-                    System.out.println(business.getName());
                 }
-                adapter.notifyDataSetChanged();
             }
+            adapter.notifyDataSetChanged();
         }
 
         @Override
@@ -72,6 +74,8 @@ public class SearchResultsActivity extends AppCompatActivity {
 
         }
     };
+
+
 
 //
 //    private class GetBusiness extends AsyncTask<Void, Void, Void> {
