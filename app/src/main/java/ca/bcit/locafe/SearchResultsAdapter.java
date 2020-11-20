@@ -13,9 +13,11 @@ import ca.bcit.locafe.data.model.Business;
 
 public class SearchResultsAdapter extends ArrayAdapter<Business> {
     Context _context;
+    ArrayList<Business> businesses;
     public SearchResultsAdapter(Context context, ArrayList<Business> businesses) {
         super(context, 0, businesses);
         _context = context;
+        this.businesses = businesses;
     }
 
     @Override

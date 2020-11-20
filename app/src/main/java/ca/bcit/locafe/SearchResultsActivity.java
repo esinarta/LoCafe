@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import ca.bcit.locafe.data.model.Business;
 
@@ -40,18 +41,16 @@ public class SearchResultsActivity extends AppCompatActivity {
         String searchText = getIntent().getStringExtra("SEARCH_TEXT");
 
         DatabaseReference dbBusiness = FirebaseDatabase.getInstance().getReference("business");
-        Query query = dbBusiness.orderByChild("business").equalTo(searchText);
+        Query query = dbBusiness.orderByChild("name").startAt(searchText);
         query.addListenerForSingleValueEvent(valueEventListener);
 
-//        lvResultsList = findViewById(R.id.results_list);
-//        lvResultsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Intent intent = new Intent(getBaseContext(), NewsDetailsActivity.class);
-//                intent.putExtra("clickedArticle", articleList.get(i));
-//                startActivity(intent);
-//            }
-//        });
+        lvResultsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getBaseContext(), LocationDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     ValueEventListener valueEventListener = new ValueEventListener() {
@@ -62,6 +61,7 @@ public class SearchResultsActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Business business = snapshot.getValue(Business.class);
                     businessList.add(business);
+                    System.out.println(business.getName());
                 }
                 adapter.notifyDataSetChanged();
             }
