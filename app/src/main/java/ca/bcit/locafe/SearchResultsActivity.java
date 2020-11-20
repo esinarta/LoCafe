@@ -44,7 +44,7 @@ public class SearchResultsActivity extends AppCompatActivity {
         String searchText = getIntent().getStringExtra("SEARCH_TEXT");
 
         DatabaseReference dbBusiness = FirebaseDatabase.getInstance().getReference("business");
-        Query query = dbBusiness.orderByChild("name").startAt(searchText);
+        Query query = dbBusiness.orderByChild("name").equalTo(searchText);
         query.addListenerForSingleValueEvent(valueEventListener);
 
 //        lvResultsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -63,7 +63,12 @@ public class SearchResultsActivity extends AppCompatActivity {
             if (dataSnapshot.exists()) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Business business = snapshot.getValue(Business.class);
-                    businessList.add(business);
+                    ArrayList<Business> temp = new ArrayList<>(businessList);
+                    temp.add(business);
+                    businessList.clear();
+                    businessList.addAll(temp);
+                    adapter = new SearchResultsAdapter(SearchResultsActivity.this, businessList);
+                    lvResultsList.setAdapter(adapter);
                 }
             }
             adapter.notifyDataSetChanged();
