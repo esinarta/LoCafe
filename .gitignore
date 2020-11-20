@@ -12,3 +12,8 @@
 /captures
 .externalNativeBuild
 .cxx
+/firebase-react-admin/node_modules
+/firebase-react-admin/react-admin-firebase-demo/node_modules
+/firebase-react-admin/react-admin-firebase-demo/src/FIREBASE_CONFIG.js
+
+

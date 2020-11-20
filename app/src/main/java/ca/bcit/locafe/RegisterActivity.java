@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import ca.bcit.locafe.ui.login.LoginActivity;
 
@@ -24,6 +26,8 @@ public class RegisterActivity extends AppCompatActivity {
     EditText email, password;
     Button registerButton,loginButton;
     FirebaseAuth firebaseAuth;
+    DatabaseReference databaseUsers;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +63,8 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
+                                    //databaseUsers = FirebaseDatabase.getInstance().getReference("users");
+
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     finish();
                                 }

@@ -1,3 +1,5 @@
+package ca.bcit.locafe;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -5,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import java.util.ArrayList;
-import ca.bcit.locafe.R;
 import ca.bcit.locafe.ui.search.SearchResultItem;
 
 public class SearchResultListArrayAdapter extends BaseAdapter {

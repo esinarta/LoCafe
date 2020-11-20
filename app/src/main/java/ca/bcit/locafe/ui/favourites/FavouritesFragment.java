@@ -14,17 +14,16 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import ca.bcit.locafe.ListArrayAdapter;
+import ca.bcit.locafe.FavouritesListArrayAdapter;
 import ca.bcit.locafe.R;
 
 public class FavouritesFragment extends Fragment {
 
     ListView listView;
     ArrayList<FavouriteItem> arrayList = new ArrayList<>();
-    ListArrayAdapter adapter;
+    FavouritesListArrayAdapter adapter;
 
     private FavouritesViewModel favouritesViewModel;
 
@@ -54,7 +53,7 @@ public class FavouritesFragment extends Fragment {
         arrayList.add(new FavouriteItem("Favourites 1"));
         arrayList.add(new FavouriteItem("Favourites 1"));
         arrayList.add(new FavouriteItem("Favourites 1"));
-        adapter = new ListArrayAdapter(getActivity(), arrayList);
+        adapter = new FavouritesListArrayAdapter(getActivity(), arrayList);
         listView.setAdapter(adapter);
     }
 

@@ -10,11 +10,11 @@ import java.util.ArrayList;
 
 import ca.bcit.locafe.ui.favourites.FavouriteItem;
 
-public class ListArrayAdapter extends BaseAdapter {
+public class FavouritesListArrayAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<FavouriteItem> arrayList;
     private TextView name;
-    public ListArrayAdapter(Context context, ArrayList<FavouriteItem> arrayList) {
+    public FavouritesListArrayAdapter(Context context, ArrayList<FavouriteItem> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }

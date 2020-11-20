@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -15,13 +16,20 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
+import ca.bcit.locafe.FavouritesListArrayAdapter;
 import ca.bcit.locafe.LocationDetailsActivity;
 import ca.bcit.locafe.R;
+import ca.bcit.locafe.SearchResultListArrayAdapter;
 import ca.bcit.locafe.SearchResultsContainerFragment;
+import ca.bcit.locafe.ui.favourites.FavouriteItem;
 
 public class SearchFragment extends Fragment {
 
     private SearchViewModel searchViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
