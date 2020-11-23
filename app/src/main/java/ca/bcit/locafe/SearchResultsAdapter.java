@@ -1,12 +1,14 @@
 package ca.bcit.locafe;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -30,9 +32,19 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
 
     @Override
     public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
-       Business business = businesses.get(position);
+       final Business business = businesses.get(position);
         holder.textViewName.setText(business.getName());
         holder.textViewAddress.setText(business.getAddress());
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            Intent intent = new Intent(view.getContext(), LocationDetailsActivity.class);
+            intent.putExtra("BUSINESS", business);
+
+            view.getContext().startActivity(intent);
+            }
+        });
     }
 
     public int getItemCount() {
@@ -42,9 +54,11 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     public class SearchViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewName, textViewAddress;
+        CardView card;
 
         public SearchViewHolder(@NonNull View itemView) {
             super(itemView);
+            card = itemView.findViewById(R.id.business_item);
             textViewName = itemView.findViewById(R.id.business_name);
             textViewAddress = itemView.findViewById(R.id.business_address);
         }

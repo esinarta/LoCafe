@@ -41,19 +41,12 @@ public class SearchResultsActivity extends AppCompatActivity {
         lvResultsList.setLayoutManager(new LinearLayoutManager(this));
         lvResultsList.setAdapter(adapter);
 
-        String searchText = getIntent().getStringExtra("SEARCH_TEXT");
+        final String searchText = getIntent().getStringExtra("SEARCH_TEXT");
 
-        DatabaseReference dbBusiness = FirebaseDatabase.getInstance().getReference("business");
+        DatabaseReference dbBusiness = FirebaseDatabase.getInstance().getReference("businesses");
         Query query = dbBusiness.orderByChild("name").equalTo(searchText);
         query.addListenerForSingleValueEvent(valueEventListener);
 
-//        lvResultsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Intent intent = new Intent(getBaseContext(), LocationDetailsActivity.class);
-//                startActivity(intent);
-//            }
-//        });
     }
 
     ValueEventListener valueEventListener = new ValueEventListener() {

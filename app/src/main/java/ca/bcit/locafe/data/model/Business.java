@@ -1,6 +1,8 @@
 package ca.bcit.locafe.data.model;
 
-public class Business {
+import java.io.Serializable;
+
+public class Business implements Serializable {
     private String businessId;
     private String name;
     private String address;

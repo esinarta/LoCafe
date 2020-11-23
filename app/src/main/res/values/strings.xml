@@ -30,6 +30,7 @@
     <string name="search_result_header">Search Results</string>
     <string name="location_details_title_temp">Location Name</string>
     <string name="delete">Delete</string>
+    <string name="addFavourite"> Add to Favourites</string>
     <string-array name="favourites">
         <item>Starbucks</item>
         <item>Blenz</item>
