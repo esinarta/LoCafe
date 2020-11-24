@@ -32,6 +32,8 @@ public class LocationDetailsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final Business business = (Business) intent.getSerializableExtra("BUSINESS");
         final String businessId = business.getId();
+        final String businessName = business.getName();
+        final String businessAddress = business.getAddress();
         locationName = findViewById(R.id.locationTitle);
         locationName.setText(business.getName());
 
@@ -41,7 +43,11 @@ public class LocationDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DatabaseReference dbUserFavourites = FirebaseDatabase.getInstance().getReference("users");
-                dbUserFavourites.child(userId).child("favourites").push().setValue(businessId);
+                String key = dbUserFavourites.child(userId).child("favourites").push().getKey();
+                dbUserFavourites.child(userId).child("favourites").child(key).child("id").setValue(businessId);
+                dbUserFavourites.child(userId).child("favourites").child(key).child("name").setValue(businessName);
+                dbUserFavourites.child(userId).child("favourites").child(key).child("address").setValue(businessAddress);
+                dbUserFavourites.child(userId).child("favourites").child(key).child("key").setValue(key);
 
                 System.out.println(businessId);
                 System.out.println(userId);
