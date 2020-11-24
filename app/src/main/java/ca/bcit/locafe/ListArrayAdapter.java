@@ -23,8 +23,8 @@ public class ListArrayAdapter extends BaseAdapter {
         return arrayList.size();
     }
     @Override
-    public Object getItem(int position) {
-        return position;
+    public FavouriteItem getItem(int position) {
+        return arrayList.get(position);
     }
     @Override
     public long getItemId(int position) {
