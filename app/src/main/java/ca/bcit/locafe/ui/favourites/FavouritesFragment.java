@@ -80,7 +80,6 @@ public class FavouritesFragment extends Fragment {
                     arrayList.add(new FavouriteItem(favItem.getId(), favItem.getName(), favItem.getAddress(), favItem.getKey()));
                     adapter = new ListArrayAdapter(getActivity(), arrayList);
                     listView.setAdapter(adapter);
-
                 }
             }
 
@@ -89,6 +88,7 @@ public class FavouritesFragment extends Fragment {
 
             }
         });
+
         listView = getView().findViewById(R.id.list_favourites);
         adapter = new ListArrayAdapter(getActivity(), arrayList);
         listView.setAdapter(adapter);
