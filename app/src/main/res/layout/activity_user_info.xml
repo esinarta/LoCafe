@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserInfoActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/updateFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/prompt_firstName"
+        android:inputType="text"
+        android:layout_gravity="start"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"/>
+
+    <EditText
+        android:id="@+id/updateLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/prompt_lastName"
+        android:inputType="text"
+        android:layout_gravity="start"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"/>
+
+    <EditText
+        android:id="@+id/updateEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/prompt_email"
+        android:inputType="textEmailAddress"
+        android:layout_gravity="start"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"/>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:text="@string/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/colorAccentLight"
+        android:layout_marginTop="20dp"/>
+
+
+</LinearLayout>

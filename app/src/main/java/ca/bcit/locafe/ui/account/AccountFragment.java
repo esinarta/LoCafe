@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 import ca.bcit.locafe.LocationDetailsActivity;
 import ca.bcit.locafe.MainActivity;
 import ca.bcit.locafe.R;
+import ca.bcit.locafe.UserInfoActivity;
 import ca.bcit.locafe.ui.login.LoginActivity;
 
 public class AccountFragment extends Fragment {
@@ -65,7 +66,11 @@ public class AccountFragment extends Fragment {
         list_account.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 4) {
+                if (i == 0) {
+                    Intent intent = new Intent(getActivity(), UserInfoActivity.class);
+                    startActivity(intent);
+                }
+                if (i == 2) {
                     firebaseAuth.signOut();
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent);

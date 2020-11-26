@@ -19,7 +19,7 @@
     <string name="title_favourites">Favourites</string>
     <string name="title_account">Account</string>
     <string name="search_header">Search for a workspace</string>
-    <string name="start_typing">Start typing here …</string>
+    <string name="start_typing">e.g. "Dennys"</string>
     <string name="queue_text_unqueued">Your place in line will show up here</string>
     <string name="queue_queuenow">Queue Now</string>
     <string name="queue_unqueue">Leave Queue</string>
@@ -31,6 +31,7 @@
     <string name="location_details_title_temp">Location Name</string>
     <string name="delete">Delete</string>
     <string name="addFavourite"> Add to Favourites</string>
+    <string name="update"> Update</string>
     <string-array name="favourites">
         <item>Starbucks</item>
         <item>Blenz</item>
@@ -46,8 +47,6 @@
     <string-array name="account">
         <item>Personal Information</item>
         <item>Bookings</item>
-        <item>Account Settings</item>
-        <item>Payment Options</item>
         <item>Logout</item>
     </string-array>
 </resources>
