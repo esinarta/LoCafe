@@ -35,6 +35,10 @@
     <string name="update"> Update</string>
     <string name="personalInfo">Personal Information</string>
     <string name="resultsFor">Results for: </string>
+    <string name="makeBooking">Make a Booking: </string>
+    <string name="date">Date: </string>
+    <string name="startTime">Start Time: </string>
+    <string name="endTime">End Time: </string>
     <string-array name="favourites">
         <item>Starbucks</item>
         <item>Blenz</item>
