@@ -12,9 +12,9 @@
         android:id="@+id/text_favourites"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="16dp"
         android:textAlignment="viewStart"
         android:textSize="28sp"
@@ -27,5 +27,8 @@
         android:id="@+id/list_favourites"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:dividerHeight="5dp" />
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
+        android:dividerHeight="5dp"
+        android:layout_marginStart="10dp"/>
 </LinearLayout>

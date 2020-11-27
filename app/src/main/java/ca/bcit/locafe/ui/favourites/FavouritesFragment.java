@@ -55,6 +55,10 @@ public class FavouritesFragment extends Fragment {
             }
         });
 
+        listView = root.findViewById(R.id.list_favourites);
+        listView.addHeaderView(new View(getActivity()));
+        listView.addFooterView(new View(getActivity()));
+
         return root;
     }
 
