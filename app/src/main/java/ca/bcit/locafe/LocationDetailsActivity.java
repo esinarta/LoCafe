@@ -18,7 +18,7 @@ import ca.bcit.locafe.data.model.Business;
 
 public class LocationDetailsActivity extends AppCompatActivity {
 
-    TextView locationName;
+    TextView locationName, locationAddress, locationDescription;
     FirebaseAuth firebaseAuth;
 
     @Override
@@ -35,8 +35,16 @@ public class LocationDetailsActivity extends AppCompatActivity {
         final String businessId = business.getId();
         final String businessName = business.getName();
         final String businessAddress = business.getAddress();
+        final String businessDescription = business.getDescription();
+
         locationName = findViewById(R.id.locationTitle);
-        locationName.setText(business.getName());
+        locationName.setText(businessName);
+
+        locationAddress = findViewById(R.id.locationAddress);
+        locationAddress.setText(businessAddress);
+
+        locationDescription = findViewById(R.id.locationDescription);
+        locationDescription.setText(businessDescription);
 
         Button searchBtn = (Button) findViewById(R.id.favouriteButton);
 
