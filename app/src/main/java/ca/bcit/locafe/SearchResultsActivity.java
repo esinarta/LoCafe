@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -41,7 +44,11 @@ public class SearchResultsActivity extends AppCompatActivity {
         lvResultsList.setLayoutManager(new LinearLayoutManager(this));
         lvResultsList.setAdapter(adapter);
 
+        TextView resultString = findViewById(R.id.resultString);
+
         final String searchText = getIntent().getStringExtra("SEARCH_TEXT");
+
+        resultString.setText(searchText);
 
         DatabaseReference dbBusiness = FirebaseDatabase.getInstance().getReference("businesses");
         Query query = dbBusiness.orderByChild("name").equalTo(searchText);

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -75,7 +76,6 @@ public class FavouritesFragment extends Fragment {
                 favouriteList.clear();
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     FavouriteItem favItem = postSnapshot.getValue(FavouriteItem.class);
-                    System.out.println(favItem.getName());
                     favouriteList.add(favItem);
                     arrayList.add(new FavouriteItem(favItem.getId(), favItem.getName(), favItem.getAddress(), favItem.getKey()));
                     adapter = new ListArrayAdapter(getActivity(), arrayList);

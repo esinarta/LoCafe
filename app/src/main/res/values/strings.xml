@@ -9,7 +9,7 @@
     <string name="action_register">Register</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="action_have_account">Have an account? Log-in Here</string>
+    <string name="action_have_account">Have an account? Login here.</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
@@ -20,7 +20,7 @@
     <string name="title_favourites">Favourites</string>
     <string name="title_account">Account</string>
     <string name="search_header">Search for a workspace</string>
-    <string name="start_typing">e.g. &quot;Dennys&quot;</string>
+    <string name="start_typing">e.g. \"Dennys\"</string>
     <string name="queue_text_unqueued">Your place in line will show up here</string>
     <string name="queue_queuenow">Queue Now</string>
     <string name="queue_unqueue">Leave Queue</string>
@@ -34,6 +34,7 @@
     <string name="addFavourite"> Add to Favourites</string>
     <string name="update"> Update</string>
     <string name="personalInfo">Personal Information</string>
+    <string name="resultsFor">Results for: </string>
     <string-array name="favourites">
         <item>Starbucks</item>
         <item>Blenz</item>
