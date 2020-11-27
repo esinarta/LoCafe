@@ -1,21 +1,33 @@
 package ca.bcit.locafe.ui.favourites;
 
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import ca.bcit.locafe.FavouritesListArrayAdapter;
@@ -26,6 +38,8 @@ public class FavouritesFragment extends Fragment {
 
     ListView listView;
     ArrayList<FavouriteItem> arrayList = new ArrayList<>();
+    ListArrayAdapter adapter;
+    FirebaseAuth firebaseAuth;
     FavouritesListArrayAdapter adapter;
 
     private FavouritesViewModel favouritesViewModel;
@@ -42,35 +56,69 @@ public class FavouritesFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        listView = root.findViewById(R.id.list_favourites);
+        listView.addHeaderView(new View(getActivity()));
+        listView.addFooterView(new View(getActivity()));
+
         return root;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        listView = Objects.requireNonNull(getView()).findViewById(R.id.list_favourites);
-        arrayList.add(new FavouriteItem("Favourites 1"));
-        arrayList.add(new FavouriteItem("Favourites 1"));
-        arrayList.add(new FavouriteItem("Favourites 1"));
-        arrayList.add(new FavouriteItem("Favourites 1"));
-        arrayList.add(new FavouriteItem("Favourites 1"));
-        arrayList.add(new FavouriteItem("Favourites 1"));
-        arrayList.add(new FavouriteItem("Favourites 1"));
-        adapter = new FavouritesListArrayAdapter(getActivity(), arrayList);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        final String userId = currentUser.getUid();
+
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users").child(userId);
+        final DatabaseReference favouritesRef = userRef.child("favourites");
+
+        final List<FavouriteItem> favouriteList = new ArrayList<>();
+        favouritesRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                favouriteList.clear();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    FavouriteItem favItem = postSnapshot.getValue(FavouriteItem.class);
+                    favouriteList.add(favItem);
+                    arrayList.add(new FavouriteItem(favItem.getId(), favItem.getName(), favItem.getAddress(), favItem.getKey()));
+                    adapter = new ListArrayAdapter(getActivity(), arrayList);
+                    listView.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        listView = getView().findViewById(R.id.list_favourites);
+        adapter = new ListArrayAdapter(getActivity(), arrayList);
         listView.setAdapter(adapter);
     }
 
+
 //    @Override
 //    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-//        Button searchBtn = (Button) getView().findViewById(R.id.btnDeleteFav);
+//        Button deleteBtn = (Button) getView().findViewById(R.id.btnDeleteFav);
 //
-//        searchBtn.setOnClickListener(new View.OnClickListener() {
+//        firebaseAuth = FirebaseAuth.getInstance();
+//        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+//        final String userId = currentUser.getUid();
+//
+//        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users").child(userId);
+//        DatabaseReference favouritesRef = userRef.child("favourites");
+//
+//        deleteBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//
+//                DatabaseReference item = adapter.getRef(position) ;
+//                item.removeValue();
 //            }
 //        });
 //    }
-
 
 }

@@ -1,7 +1,9 @@
 package ca.bcit.locafe.data.model;
 
-public class Business {
-    private String businessId;
+import java.io.Serializable;
+
+public class Business implements Serializable {
+    private String id;
     private String name;
     private String address;
     private long cord_lat, cord_long;
@@ -11,8 +13,8 @@ public class Business {
 
     }
 
-    public Business(String businessId, String name, String address, long cord_lat, long cord_long, String description) {
-        this.businessId = businessId;
+    public Business(String id, String name, String address, long cord_lat, long cord_long, String description) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.cord_lat = cord_lat;
@@ -20,12 +22,12 @@ public class Business {
         this.description = description;
     }
 
-    public String getBusinessId() {
-        return businessId;
+    public String getId() {
+        return id;
     }
 
-    public void setBusinessId(String businessId) {
-        this.businessId = businessId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

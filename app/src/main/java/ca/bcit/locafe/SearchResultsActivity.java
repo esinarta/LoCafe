@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -41,19 +44,16 @@ public class SearchResultsActivity extends AppCompatActivity {
         lvResultsList.setLayoutManager(new LinearLayoutManager(this));
         lvResultsList.setAdapter(adapter);
 
-        String searchText = getIntent().getStringExtra("SEARCH_TEXT");
+        TextView resultString = findViewById(R.id.resultString);
 
-        DatabaseReference dbBusiness = FirebaseDatabase.getInstance().getReference("business");
-        Query query = dbBusiness.orderByChild("name").startAt(searchText);
+        final String searchText = getIntent().getStringExtra("SEARCH_TEXT");
+
+        resultString.setText(searchText);
+
+        DatabaseReference dbBusiness = FirebaseDatabase.getInstance().getReference("businesses");
+        Query query = dbBusiness.orderByChild("name").equalTo(searchText);
         query.addListenerForSingleValueEvent(valueEventListener);
 
-//        lvResultsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Intent intent = new Intent(getBaseContext(), LocationDetailsActivity.class);
-//                startActivity(intent);
-//            }
-//        });
     }
 
     ValueEventListener valueEventListener = new ValueEventListener() {
@@ -63,7 +63,12 @@ public class SearchResultsActivity extends AppCompatActivity {
             if (dataSnapshot.exists()) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Business business = snapshot.getValue(Business.class);
-                    businessList.add(business);
+                    ArrayList<Business> temp = new ArrayList<>(businessList);
+                    temp.add(business);
+                    businessList.clear();
+                    businessList.addAll(temp);
+                    adapter = new SearchResultsAdapter(SearchResultsActivity.this, businessList);
+                    lvResultsList.setAdapter(adapter);
                 }
             }
             adapter.notifyDataSetChanged();

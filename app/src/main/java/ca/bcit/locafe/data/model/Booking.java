@@ -1,9 +1,11 @@
 package ca.bcit.locafe.data.model;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Booking {
     private String bookingId;
+    private String businessId;
 
     private String tableId;
     private String userId;
@@ -11,9 +13,21 @@ public class Booking {
 //    private Table table;
 //    private User user;
 
+    private Calendar startTime;
+    private Calendar endTime;
+
     private Date start;
     private Date end;
     private int numPeople;
+
+    public Booking() {}
+
+    public Booking(String businessId, Calendar startTime, Calendar endTime, int numPeople) {
+        this.businessId = businessId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.numPeople = numPeople;
+    }
 
     public Booking(String bookingId, String tableId, String userId, Date start, Date end, int numPeople) {
         this.bookingId = bookingId;
@@ -73,6 +87,13 @@ public class Booking {
     public void setNumPeople(int numPeople) {
         this.numPeople = numPeople;
     }
+
+    public void setBusinessId(String businessId) { this.businessId = businessId; }
+
+    public void setStartTime(Calendar startTime) { this.startTime = startTime; }
+
+    public void setEndTime(Calendar endTime) { this.endTime = endTime; }
+
 //
 //    public Table getTable() {
 //        return table;

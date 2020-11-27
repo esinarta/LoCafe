@@ -5,10 +5,11 @@
     <string name="prompt_password">Password</string>
     <string name="prompt_firstName">First Name</string>
     <string name="prompt_lastName">Last Name</string>
+    <string name="prompt_phone">Phone Number</string>
     <string name="action_register">Register</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="action_have_account">Have an account? Log-in Here</string>
+    <string name="action_have_account">Have an account? Login here.</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
@@ -19,7 +20,7 @@
     <string name="title_favourites">Favourites</string>
     <string name="title_account">Account</string>
     <string name="search_header">Search for a workspace</string>
-    <string name="start_typing">Start typing here …</string>
+    <string name="start_typing">e.g. \"Dennys\"</string>
     <string name="queue_text_unqueued">Your place in line will show up here</string>
     <string name="queue_queuenow">Queue Now</string>
     <string name="queue_unqueue">Leave Queue</string>
@@ -30,6 +31,14 @@
     <string name="search_result_header">Search Results</string>
     <string name="location_details_title_temp">Location Name</string>
     <string name="delete">Delete</string>
+    <string name="addFavourite"> Add to Favourites</string>
+    <string name="update"> Update</string>
+    <string name="personalInfo">Personal Information</string>
+    <string name="resultsFor">Results for: </string>
+    <string name="makeBooking">Make a Booking: </string>
+    <string name="date">Date: </string>
+    <string name="startTime">Start Time: </string>
+    <string name="endTime">End Time: </string>
     <string-array name="favourites">
         <item>Starbucks</item>
         <item>Blenz</item>
@@ -45,8 +54,6 @@
     <string-array name="account">
         <item>Personal Information</item>
         <item>Bookings</item>
-        <item>Account Settings</item>
-        <item>Payment Options</item>
         <item>Logout</item>
     </string-array>
 </resources>

@@ -9,10 +9,9 @@
         android:roundIcon="@drawable/locafe_logo_text"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity">
-        </activity>
-        <activity android:name=".SearchResultsActivity">
-        </activity>
+        <activity android:name=".UserInfoActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".SearchResultsActivity"></activity>
         <activity android:name=".LocationDetailsActivity" />
         <activity
             android:name=".BottomNavigation"
@@ -26,8 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

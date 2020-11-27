@@ -4,7 +4,8 @@ public class User {
     protected String firstName;
     protected String lastName;
     protected String email;
-    protected String[] favourites;
+    protected String phone;
+    protected Business[] favourites;
 
     public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -23,5 +24,9 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+    public Business[] getFavourites() { return favourites; }
+
+    public String getPhone() { return phone; }
 
 }

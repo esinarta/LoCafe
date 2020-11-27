@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/frame_container"
     tools:context=".ui.favourites.FavouritesFragment">
 
     <TextView
         android:id="@+id/text_favourites"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="16dp"
         android:textAlignment="viewStart"
         android:textSize="28sp"
@@ -26,6 +27,9 @@
         android:id="@+id/list_favourites"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
         android:dividerHeight="5dp"
-        android:entries="@array/favourites"/>
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
 </LinearLayout>
