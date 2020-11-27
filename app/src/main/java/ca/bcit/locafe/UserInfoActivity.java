@@ -31,6 +31,7 @@ public class UserInfoActivity extends AppCompatActivity {
         final EditText firstName = findViewById(R.id.updateFirstName);
         final EditText lastName = findViewById(R.id.updateLastName);
         final EditText email = findViewById(R.id.updateEmail);
+        final EditText phone = findViewById(R.id.updatePhone);
 
         Button updateBtn = findViewById(R.id.btnUpdate);
 
@@ -46,9 +47,11 @@ public class UserInfoActivity extends AppCompatActivity {
                 String userFirst = snapshot.child("firstName").getValue(String.class);
                 String userLast = snapshot.child("lastName").getValue(String.class);
                 String userEmail = snapshot.child("email").getValue(String.class);
+                String userPhone = snapshot.child("phone").getValue(String.class);
                 firstName.setText(userFirst);
                 lastName.setText(userLast);
                 email.setText(userEmail);
+                phone.setText(userPhone);
             }
 
             @Override
@@ -64,6 +67,7 @@ public class UserInfoActivity extends AppCompatActivity {
                 final String newFirst = firstName.getText().toString();
                 final String newLast = lastName.getText().toString();
                 final String newEmail = email.getText().toString();
+                final String newPhone = phone.getText().toString();
 
                 userRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -71,6 +75,7 @@ public class UserInfoActivity extends AppCompatActivity {
                         dataSnapshot.getRef().child("firstName").setValue(newFirst);
                         dataSnapshot.getRef().child("lastName").setValue(newLast);
                         //dataSnapshot.getRef().child("email").setValue(newEmail);
+                        dataSnapshot.getRef().child("phone").setValue(newPhone);
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
