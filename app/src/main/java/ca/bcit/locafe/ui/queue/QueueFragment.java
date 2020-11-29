@@ -22,7 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import ca.bcit.locafe.ListArrayAdapter;
+import ca.bcit.locafe.FavouritesListArrayAdapter;
 import ca.bcit.locafe.LocationDetailsActivity;
 import ca.bcit.locafe.R;
 import ca.bcit.locafe.ui.favourites.FavouriteItem;

@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,8 +18,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import ca.bcit.locafe.LocationDetailsActivity;
-import ca.bcit.locafe.MainActivity;
+import ca.bcit.locafe.BookingsActivity;
 import ca.bcit.locafe.R;
 import ca.bcit.locafe.UserInfoActivity;
 import ca.bcit.locafe.ui.login.LoginActivity;
@@ -70,6 +68,10 @@ public class AccountFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), UserInfoActivity.class);
                     startActivity(intent);
                 }
+                if(i ==1){
+                    Intent intent = new Intent(getActivity(), BookingsActivity.class);
+                    startActivity(intent);
+                }
                 if (i == 2) {
                     firebaseAuth.signOut();
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
@@ -77,6 +79,7 @@ public class AccountFragment extends Fragment {
                 }
             }
         });
+
 
     }
 

@@ -1,43 +1,64 @@
 package ca.bcit.locafe.data.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Booking {
+    static public final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
     private String bookingId;
     private String businessId;
 
     private String tableId;
     private String userId;
 
-//    private Table table;
-//    private User user;
+    private String startString;
+    private String endString;
 
-    private Calendar startTime;
-    private Calendar endTime;
-
-    private Date start;
-    private Date end;
     private int numPeople;
 
     public Booking() {}
 
-    public Booking(String businessId, Calendar startTime, Calendar endTime, int numPeople) {
+    public Booking(String bookingId, String userId, String businessId, String tableId, String startString, String endString, int numPeople){
+        this.bookingId = bookingId;
+
+        this.userId = userId;
         this.businessId = businessId;
-        this.startTime = startTime;
-        this.endTime = endTime;
+
         this.numPeople = numPeople;
+        this.startString = startString;
+        this.endString = endString;
+
+        this.tableId = tableId;
     }
 
-    public Booking(String bookingId, String tableId, String userId, Date start, Date end, int numPeople) {
-        this.bookingId = bookingId;
-        this.tableId = tableId;
-        this.userId = userId;
-//        this.table = table;
-//        this.user = user;
-        this.start = start;
-        this.end = end;
-        this.numPeople = numPeople;
+    public String getBusinessId() {
+        return businessId;
+    }
+
+    public String getStartString() {
+        return startString;
+    }
+
+    public Date getStartDate() throws ParseException {
+        return format.parse(startString);
+    }
+
+    public void setStartString(String startString) {
+        this.startString = startString;
+    }
+
+    public String getEndString() {
+        return endString;
+    }
+
+    public Date getEndDate() throws ParseException {
+        return format.parse(endString);
+    }
+
+    public void setEndString(String endString) {
+        this.endString = endString;
     }
 
     public String getBookingId() {
@@ -64,22 +85,6 @@ public class Booking {
         this.userId = userId;
     }
 
-    public Date getStart() {
-        return start;
-    }
-
-    public void setStart(Date start) {
-        this.start = start;
-    }
-
-    public Date getEnd() {
-        return end;
-    }
-
-    public void setEnd(Date end) {
-        this.end = end;
-    }
-
     public int getNumPeople() {
         return numPeople;
     }
@@ -89,25 +94,4 @@ public class Booking {
     }
 
     public void setBusinessId(String businessId) { this.businessId = businessId; }
-
-    public void setStartTime(Calendar startTime) { this.startTime = startTime; }
-
-    public void setEndTime(Calendar endTime) { this.endTime = endTime; }
-
-//
-//    public Table getTable() {
-//        return table;
-//    }
-//
-//    public void setTable(Table table) {
-//        this.table = table;
-//    }
-//
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
 }

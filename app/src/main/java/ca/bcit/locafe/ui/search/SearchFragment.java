@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,15 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import java.util.ArrayList;
-import java.util.Objects;
-
-import ca.bcit.locafe.FavouritesListArrayAdapter;
-import ca.bcit.locafe.LocationDetailsActivity;
 import ca.bcit.locafe.R;
-import ca.bcit.locafe.SearchResultListArrayAdapter;
 import ca.bcit.locafe.SearchResultsActivity;
-import ca.bcit.locafe.SearchResultsContainerFragment;
 
 public class SearchFragment extends Fragment {
 

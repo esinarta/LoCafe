@@ -38,9 +38,8 @@ public class FavouritesFragment extends Fragment {
 
     ListView listView;
     ArrayList<FavouriteItem> arrayList = new ArrayList<>();
-    ListArrayAdapter adapter;
-    FirebaseAuth firebaseAuth;
     FavouritesListArrayAdapter adapter;
+    FirebaseAuth firebaseAuth;
 
     private FavouritesViewModel favouritesViewModel;
 
@@ -84,7 +83,7 @@ public class FavouritesFragment extends Fragment {
                     FavouriteItem favItem = postSnapshot.getValue(FavouriteItem.class);
                     favouriteList.add(favItem);
                     arrayList.add(new FavouriteItem(favItem.getId(), favItem.getName(), favItem.getAddress(), favItem.getKey()));
-                    adapter = new ListArrayAdapter(getActivity(), arrayList);
+                    adapter = new FavouritesListArrayAdapter(getActivity(), arrayList);
                     listView.setAdapter(adapter);
                 }
             }
@@ -96,7 +95,7 @@ public class FavouritesFragment extends Fragment {
         });
 
         listView = getView().findViewById(R.id.list_favourites);
-        adapter = new ListArrayAdapter(getActivity(), arrayList);
+        adapter = new FavouritesListArrayAdapter(getActivity(), arrayList);
         listView.setAdapter(adapter);
     }
 
