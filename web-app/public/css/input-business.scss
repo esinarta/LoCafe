@@ -1,0 +1,88 @@
+body{
+    background-color: #F2F4F3;
+    padding:2% 20%;
+}
+
+#loginModal{
+    button{
+        color: #cb4848;
+    }
+}
+
+#logo{
+    height: 250px;
+    width: 200px;
+}
+.business{
+    margin: 10px;
+    .business-display{
+        background-color: #ffffff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        padding: 30px;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+    
+        .biz-name{
+            color:#494645;
+            font-weight: 700;
+            font-size: 24px;
+        }
+        .biz-type{
+            color:#cb4848;
+            font-size: 13px;
+        }
+        .biz-addr{
+            columns: #262323;
+            font-size: 13px;
+        }
+        .biz-hr{
+            color:#262323;
+            font-size: 13px;
+        }
+        .biz-tables{
+            color:#262323;
+            font-size: 13px;
+        }
+        .biz-desciption{
+            color:#000000;
+            font-size: 13px;
+        }
+        
+    }  
+}
+
+.user-display{
+    background-image: linear-gradient(to bottom, #cb4848, #c1463f, #b64336, #ac412d, #a13f25);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 30px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    .title-name{
+        text-align: left;
+        font-weight: 700;
+        font-size: 24px;
+        color:#ffffff;
+    }
+    .item{
+        height: 30px;
+        width: 30px;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        background: #e5e5e5;
+    }
+    #user-name-display{
+        text-align: left;
+        color:#ffffff;
+    }
+}

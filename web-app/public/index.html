@@ -1,0 +1,197 @@
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Locafe Business Web App">
+    <meta name="author" content="Vivian Wu">
+
+    <!-- Title Page-->
+    <title>LoCafe</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="css/business.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <!-- modal static -->
+    <div class="modal show" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel"
+        data-backdrop="static" data-show="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button> -->
+                </div>
+                <div class="modal-body mx-3">
+                    <p id="error-msg"></p>
+                    <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                        <input type="email" id="login-email" class="form-control validate">
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                        <input type="password" id="login-pass" class="form-control validate">
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button id="register-button" class="btn btn-default">Register</button>
+                    <button id="login-button" class="btn btn-default">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal static -->
+    <!-- business modal -->
+    <div class="modal fade" id="businessModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="largeModalLabel">Add a New Business</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="formName">Name</label>
+                            <input type="text" class="form-control" id="formName">
+                        </div>
+                        <div class="form-group">
+                            <label for="formAddress">Address</label>
+                            <input type="text" class="form-control" id="formAddress">
+                        </div>
+                        <div class="form-group">
+                            <label for="formHours">Hours</label>
+                            <input type="text" class="form-control" id="formHours">
+                        </div>
+                        <div class="form-group">
+                            <label for="formType">Type</label>
+                            <input type="text" class="form-control" id="formType">
+                        </div>
+                        <div class="form-group">
+                            <label for="formDescription">Description</label>
+                            <input type="text" class="form-control" id="formDescription">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button id="create-business-button" type="button" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end business modal -->
+    <!-- table modal -->
+    <div class="modal fade" id="tableModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="largeModalLabel">Create New Table</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="formSeats">Seats</label>
+                            <input type="text" class="form-control" id="formSeats" placeholder="Number of Seats">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="formOutdoor">
+                            <label class="form-check-label" for="defaultCheck1">
+                                Outdoor
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button id="create-table-button" type="button" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end table modal -->
+    <div class="container-fluid">
+        <img id="logo" src="img/locafe_logo_text.png">
+        <div class="row user-display">
+            <div class="row">
+                <!-- <p class="title-name">LoCafe</p> -->
+                <p id="user-name-display"></p>
+            </div>
+            <div>
+                <button class="item" title="new-business" data-toggle="modal" data-target="#businessModal">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <button id="logout-button" class="item" title="logout" data-toggle="modal" data-target="#loginModal">
+                    <i class="zmdi zmdi-run"></i>
+                </button>
+            </div>
+        </div>
+        <div id="root"></div>
+    </div>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
+    <!-- firebase  -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/8.1.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/8.1.1/firebase-auth.js"></script>
+    <script src="/__/firebase/8.1.1/firebase-database.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- main  -->
+    <script src="js/business.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
